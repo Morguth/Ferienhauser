@@ -104,6 +104,7 @@ footer {
     margin-bottom: 10px;
     border-radius: 5px;
     border: 1px solid black;
+    display: inline-block;
 }
 
 
@@ -232,7 +233,7 @@ td, th {
     margin-top: 0;
 }
 
-.haus-info .btn {
+.haus-info{
     display: inline-block;
     margin: 8px 0 0;
 }
