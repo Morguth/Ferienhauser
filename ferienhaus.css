@@ -1,0 +1,244 @@
+﻿body {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "navbar navbar"
+        "sidebar main"
+        "footer footer";
+}
+
+
+nav{
+    position: sticky;
+    top: 0;
+    grid-area: navbar;
+    background-color: cadetblue;
+    font-size: 15px;
+    padding: 0.3em;
+    padding-left: 0.4em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+aside {
+    grid-area: sidebar;
+    background-color: antiquewhite;
+    position: sticky;
+    top: 65px;
+    align-self: start;
+    height: calc(100vh - 65px);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+main {
+    grid-area: main;
+    background-color: ghostwhite;
+    font-size: 20px;
+    background-image: url("hintergrund.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+h2{
+    text-align: center;
+    color: black;
+    font-size: 100px;
+    padding-top: 20%;
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+    grid-area: footer;
+    background-color: cadetblue;
+    font-size: 15px;
+    padding: 0.3em;
+    padding-left: 0.4em;
+}
+
+#button{
+    display: none;
+    float: right;
+}
+
+@media(max-width: 800px){
+    #button {
+        display: block;
+    }
+    body{
+        grid-template-columns: 1fr;
+    }
+    aside{
+        position: fixed;
+        width: 300px;
+        display: none;
+    }
+    .show{
+        display: block;
+    }
+}
+
+
+
+
+.btn {
+    background-image: linear-gradient(to right, #ce684e, #c98e61);
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+
+.btn:hover {
+    background-image: linear-gradient(to right, #d19465, #dd684b);
+    color: white;
+    cursor: pointer;
+}
+
+#h2-div {
+    margin-bottom: 20%;
+}
+
+#map-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+#preistabelle {
+    width: 100%;
+    margin: 20px;
+    margin-top: 20px;
+    border-collapse: collapse;
+    max-width: 80%;
+}
+
+td, th {
+    border: 3px solid rgb(173, 93, 39);
+    padding: 8px;
+    text-align: left;
+    background-color: antiquewhite;
+}
+
+
+#preise-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#preise-titel {
+    text-align: center;
+    font-size: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family:  "Times New Roman", Times, serif;
+}
+
+#anfahrt-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+
+#anfahrt-titel {
+    text-align: center;
+    font-size: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family:  "Times New Roman", Times, serif;
+}
+
+
+
+#beliebt-main {
+    width: 100%;
+    min-width: 0;
+    padding: 32px;
+    background-image: url("hintergrund.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+}
+
+.beliebt-header {
+    text-align: center;
+    margin: 0 auto 32px;
+}
+
+.beliebt-header h2 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    padding-top: 0;
+    margin: 0 0 12px;
+}
+
+.beliebt-header p {
+    margin: 0;
+}
+
+#BeliebtAngebote {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.haus-karte {
+    overflow: hidden;
+    border: 2px solid rgb(173, 93, 39);
+    border-radius: 12px;
+    background-color: antiquewhite;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+}
+
+.haus-karte img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.haus-info {
+    padding: 18px;
+    text-align: left;
+}
+
+.haus-info h3 {
+    margin-top: 0;
+}
+
+.haus-info .btn {
+    display: inline-block;
+    margin: 8px 0 0;
+}
+
+@media (max-width: 600px) {
+    #beliebt-main {
+        padding: 20px 14px;
+    }
+}
